@@ -1,17 +1,31 @@
 // MAIL
-const emailList = ["gugmarra@gmail.com", "pincopallino@gmail.com", "marcoRossi85@gmail.com"];
+const emailList = ["gugmarra@gmail.com", "pincopallino@gmail.com", "marcoRossi85@gmail.com", "gianfrancobiscotto@gmail.com", "luigibello@gmail.com"];
 
 const emailUser = prompt("Inserisci email");
 let message;
+let check;
 
 for(let i = 0; i < emailList.length; i++){
 
     if(emailUser === emailList[i]){
-        message = "L'email è corretta. BENVENUTO" ;
+        check = true;
     }else{
-        message = "!L'email inserita non è corretta!"
+        ckech = false;
     }
-    
+
+}
+if(check === true){
+    console.log("tutto ok");
+}else{
+    console.log("sbagliata");
 }
 
-console.log(message);
+
+
+
+// GIOCO DEI DADI
+
+// const userList = [1, 2, 3, 4, 5, 6];
+// const userPc = [1, 2, 3, 4, 5, 6];
+
+// const numuser = rand
