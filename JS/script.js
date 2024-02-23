@@ -2,19 +2,18 @@
 const emailList = ["gugmarra@gmail.com", "pincopallino@gmail.com", "marcoRossi85@gmail.com", "gianfrancobiscotto@gmail.com", "luigibello@gmail.com"];
 
 const emailUser = prompt("Inserisci email");
-let message;
-let check;
+let mailFound = false;
 
 for(let i = 0; i < emailList.length; i++){
 
     if(emailUser === emailList[i]){
-        check = true;
-    }else{
-        ckech = false;
+        mailFound = true;
+        // stoppo il ciclo
+        i = emailList.length;
     }
-
 }
-if(check === true){
+// in base all'esito del ciclo stampo il risultato
+if(mailFound){
     console.log("tutto ok");
 }else{
     console.log("sbagliata");
@@ -22,10 +21,20 @@ if(check === true){
 
 
 
-
 // GIOCO DEI DADI
 
 // const userList = [1, 2, 3, 4, 5, 6];
-// const userPc = [1, 2, 3, 4, 5, 6];
+// const pcList = [1, 2, 3, 4, 5, 6];
 
-// const numuser = rand
+// const numuser = Math.ceil(Math.random() * userList.length);
+// console.log(numuser);
+
+// const numPc = Math.ceil(Math.random() * pcList.length);
+// console.log(numPc);
+
+// if(numuser > numPc){
+//     console.log("Il vincitore è " + userList);
+// }else if(numuser < numPc){
+//     console.log("Il vincitore è " + userList);
+    
+// }
