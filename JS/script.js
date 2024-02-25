@@ -1,14 +1,13 @@
-// MAIL
-const emailList = ["gugmarra@gmail.com", "pincopallino@gmail.com", "marcoRossi85@gmail.com", "gianfrancobiscotto@gmail.com", "luigibello@gmail.com"];
-
-const emailUser = document.getElementById("email").value;
-const resultEmail = document.querySelector(".result-email");
 const btnControl = document.getElementById("btn-control");
-let mailFound = false;
-
 
 btnControl.addEventListener('click', function(){
-
+    
+    // MAIL
+    const emailList = ["gugmarra@gmail.com", "pincopallino@gmail.com", "marcoRossi85@gmail.com", "gianfrancobiscotto@gmail.com", "luigibello@gmail.com"];
+    
+    const emailUser = document.getElementById("email").value;
+    const resultEmail = document.querySelector(".result-email");
+    let mailFound = false;
     
     for(let i = 0; i < emailList.length; i++){
         
@@ -29,6 +28,7 @@ btnControl.addEventListener('click', function(){
         `;
     }
     
+    resultEmail.classList.remove("d-none");
     
 })
 
