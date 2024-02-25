@@ -27,7 +27,7 @@ btnControl.addEventListener('click', function(){
         `;
     }else{
         resultEmail.innerHTML = `
-        Mi dispiace ma'email ${emailUser} non è valida
+        Mi dispiace ma l'email ${emailUser} non è valida
         `;
     }
     
@@ -45,16 +45,16 @@ btnControl2.addEventListener('click', function(){
     const userList = [1, 2, 3, 4, 5, 6];
     const pcList = [1, 2, 3, 4, 5, 6];
     
-    const numuser = Math.ceil(Math.random() * userList.length);
-    
+    const numUser = Math.ceil(Math.random() * userList.length);
     const numPc = Math.ceil(Math.random() * pcList.length);
     
-    resultDadi.append("Il giocatore ha pescato " + numuser + ", ");
-    resultDadi.append("Il PC ha pescato " + numPc);
+    resultDadi.innerHTML = `
+    Il giocatore ha pescato ${numUser} <br> Il PC ha pescato ${numPc}
+    `;
     
-    if(numuser > numPc){
+    if(numUser > numPc){
         resultWin.innerHTML = "Il vincitore è il GIOCATORE";
-    }else if(numuser < numPc){
+    }else if(numUser < numPc){
         resultWin.innerHTML = "Il vincitore è il PC";
     }else{
         resultWin.innerHTML = "I numeri sono uguali, PARITÀ";
