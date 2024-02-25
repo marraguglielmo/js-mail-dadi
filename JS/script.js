@@ -1,42 +1,55 @@
 // MAIL
-// const emailList = ["gugmarra@gmail.com", "pincopallino@gmail.com", "marcoRossi85@gmail.com", "gianfrancobiscotto@gmail.com", "luigibello@gmail.com"];
+const emailList = ["gugmarra@gmail.com", "pincopallino@gmail.com", "marcoRossi85@gmail.com", "gianfrancobiscotto@gmail.com", "luigibello@gmail.com"];
 
-// const emailUser = prompt("Inserisci email");
-// let mailFound = false;
+const emailUser = document.getElementById("email").value;
+const resultEmail = document.querySelector(".result-email");
+const btnControl = document.getElementById("btn-control");
+let mailFound = false;
 
-// for(let i = 0; i < emailList.length; i++){
 
-//     if(emailUser === emailList[i]){
-//         mailFound = true;
-//         // stoppo il ciclo
-//         i = emailList.length;
-//     }
-// }
-// // in base all'esito del ciclo stampo il risultato
-// if(mailFound){
-//     console.log("L'email inserita è valida");
-// }else{
-//     console.log("!L'email inserita non è valida!");
-// }
+btnControl.addEventListener('click', function(){
+
+    
+    for(let i = 0; i < emailList.length; i++){
+        
+        if(emailUser === emailList[i]){
+            mailFound = true;
+            // stoppo il ciclo
+            i = emailList.length;
+        }
+    }
+    // in base all'esito del ciclo stampo il risultato
+    if(mailFound){
+        resultEmail.innerHTML =`
+        L'email ${emailUser} è valida. BENVENUTO
+        `;
+    }else{
+        resultEmail.innerHTML = `
+        Mi dispiace ma'email ${emailUser} non è valida
+        `;
+    }
+    
+    
+})
 
 
 
 // GIOCO DEI DADI
 
-const userList = [1, 2, 3, 4, 5, 6];
-const pcList = [1, 2, 3, 4, 5, 6];
+// const userList = [1, 2, 3, 4, 5, 6];
+// const pcList = [1, 2, 3, 4, 5, 6];
 
-const numuser = Math.ceil(Math.random() * userList.length);
+// const numuser = Math.ceil(Math.random() * userList.length);
 
-const numPc = Math.ceil(Math.random() * pcList.length);
+// const numPc = Math.ceil(Math.random() * pcList.length);
 
-console.log("Il giocatore ha pescato " + numuser);
-console.log("Il PC ha pescato " + numPc);
+// console.log("Il giocatore ha pescato " + numuser);
+// console.log("Il PC ha pescato " + numPc);
 
-if(numuser > numPc){
-    console.log("Il vincitore è il giocatore");
-}else if(numuser < numPc){
-    console.log("Il vincitore è il PC");
-}else{
-    console.log("I numeri pescati sono uguali: PARITÀ");
-}
+// if(numuser > numPc){
+//     console.log("Il vincitore è il giocatore");
+// }else if(numuser < numPc){
+//     console.log("Il vincitore è il PC");
+// }else{
+//     console.log("I numeri pescati sono uguali: PARITÀ");
+// }
