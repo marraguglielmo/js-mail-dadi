@@ -1,8 +1,11 @@
-const btnControl = document.getElementById("btn-control");
 
+const btnControl = document.getElementById("btn-control");
+const btnControl2 = document.getElementById("btn-control2");
+
+// MAIL
 btnControl.addEventListener('click', function(){
     
-    // MAIL
+    
     const emailList = ["gugmarra@gmail.com", "pincopallino@gmail.com", "marcoRossi85@gmail.com", "gianfrancobiscotto@gmail.com", "luigibello@gmail.com"];
     
     const emailUser = document.getElementById("email").value;
@@ -34,22 +37,30 @@ btnControl.addEventListener('click', function(){
 
 
 
-// GIOCO DEI DADI
+// GIOCO DADI
+btnControl2.addEventListener('click', function(){
+    const resultDadi = document.querySelector(".result-dadi");
+    const resultWin = document.querySelector(".result-dadi-win");
+    
+    const userList = [1, 2, 3, 4, 5, 6];
+    const pcList = [1, 2, 3, 4, 5, 6];
+    
+    const numuser = Math.ceil(Math.random() * userList.length);
+    
+    const numPc = Math.ceil(Math.random() * pcList.length);
+    
+    resultDadi.append("Il giocatore ha pescato " + numuser + ", ");
+    resultDadi.append("Il PC ha pescato " + numPc);
+    
+    if(numuser > numPc){
+        resultWin.innerHTML = "Il vincitore è il GIOCATORE";
+    }else if(numuser < numPc){
+        resultWin.innerHTML = "Il vincitore è il PC";
+    }else{
+        resultWin.innerHTML = "I numeri sono uguali, PARITÀ";
+    }
 
-// const userList = [1, 2, 3, 4, 5, 6];
-// const pcList = [1, 2, 3, 4, 5, 6];
-
-// const numuser = Math.ceil(Math.random() * userList.length);
-
-// const numPc = Math.ceil(Math.random() * pcList.length);
-
-// console.log("Il giocatore ha pescato " + numuser);
-// console.log("Il PC ha pescato " + numPc);
-
-// if(numuser > numPc){
-//     console.log("Il vincitore è il giocatore");
-// }else if(numuser < numPc){
-//     console.log("Il vincitore è il PC");
-// }else{
-//     console.log("I numeri pescati sono uguali: PARITÀ");
-// }
+    resultDadi.classList.remove("d-none");
+    resultWin.classList.remove("d-none");
+    
+})
